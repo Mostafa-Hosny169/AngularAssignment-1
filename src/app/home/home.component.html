@@ -1,0 +1,25 @@
+
+<div class="content-1 pt-5 w-75 m-auto">
+    <input type="text" name="userName" class="form-control " [(ngModel)]="userName" (keydown)="OnKeyIpnut()">
+
+    <button class="btn btn-primary mt-3" [disabled]="!checkInput" (click)="resetInput()">
+        Empty
+    </button>    
+    <button class="btn btn-primary mt-3 ms-3" (click)="onClickButton()">Display Details</button>
+    
+    @if (clickButton==true) {
+        <h4 class="text-center pt-3">This is home page</h4>
+        @for (num of numOfClicks; track $index) {
+            @if(num>=5){
+                <h4 class=" text-center"  [ngStyle]="pragraphStyle" [ngClass]="pragraphClass">{{num}}</h4>
+            }
+            @else {
+                <h4 class=" text-center">{{num}}</h4>
+            } 
+        }
+    }
+   
+   
+    <h3 class="pt-3 text-center">{{userName}}</h3>
+</div>
+
